@@ -8,16 +8,6 @@ class Home <Appium::Driver
     @visor = "result"
 
     #botoes
-    @botao_0 = "digit_0"
-    @botao_1 = "digit_1"
-    @botao_2 = "digit_2"
-    @botao_3 = "digit_3"
-    @botao_4 = "digit_4"
-    @botao_5 = "digit_5"
-    @botao_6 = "digit_6"
-    @botao_7 = "digit_7"
-    @botao_8 = "digit_8"
-    @botao_9 = "digit_9"
     @botao_mais = "op_add"
     @botao_menos = "op_sub"
     @botao_div = "op_div"
@@ -47,6 +37,18 @@ class Home <Appium::Driver
         id(@visor).displayed?
     end
 
+    def multiplica(num1, num2)
+        toca_digito(num1)
+        id(@botao_mult).click
+        toca_digito(num2)
+        id(@botao_igual).click
+    end
 
+    def toca_digito(valor)
+        valor = valor.to_s
+        valor.each_char do |digito|
+            id("digit_#{digito}").click
+        end
+    end
 
 end
