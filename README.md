@@ -1,4 +1,4 @@
-# Calculator-Specs
+# Calculator-Specs-Screen Objects
 Basic structure Appium android project
 
 ### Instalando Ambiente no Mac
